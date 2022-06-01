@@ -1,0 +1,168 @@
+@font-face {
+  font-family: karbon-bold;
+  src: url(../../ExternalRef/fonts/karbon-bold-webfont.ttf);
+}
+@font-face {
+  font-family: karbon-regular;
+  src: url(../../ExternalRef/fonts/karbon-regular-webfont.ttf);
+}
+@font-face {
+  font-family: karbon-semibold;
+  src: url(../../ExternalRef/fonts/karbon-semibold-webfont.ttf);
+}
+@font-face {
+  font-family: karbon-medium;
+  src: url(../../ExternalRef/fonts/karbon-medium-webfont.ttf);
+}
+@font-face {
+  font-family: karbon-regularitalic;
+  src: url(../../ExternalRef/fonts/karbon-regularitalic-webfont.ttf);
+}
+@font-face {
+  font-family: karbon-light;
+  src: url(../../ExternalRef/fonts/karbon-light-webfont.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.leftFilterSection {
+  font-family: karbon-bold;
+  background-color: #ebf2fb;
+  width: 25%;
+  border-radius: 0.2rem;
+}
+.HeadingSection {
+  padding: 1.625rem 1.25rem;
+  display: flex;
+  align-items: center;
+  color: #003479;
+  h2 {
+    margin: 0;
+    font-size: 1.45rem;
+    white-space: nowrap;
+  }
+  .blueLine {
+    margin: 0.3rem 1rem 0 1rem;
+    height: 2px;
+    background-color: #003479;
+    width: 100%;
+  }
+}
+
+.filterSection {
+  padding: 0 1.25rem 1.75rem 1.25rem;
+}
+.filterItem {
+  &:not(:first-child) {
+    margin-top: 1.875rem;
+  }
+  .labelSection {
+    margin: 0 0.5rem 0.9375rem 0.5rem;
+  }
+  label {
+    margin-left: -0.4rem;
+    color: #1c75bc;
+    font-family: karbon-semibold;
+    font-size: 1rem;
+  }
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    font-family: karbon-regularitalic !important;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    height: 2.5rem;
+    border: 0;
+    outline: none;
+    width: 100%;
+  }
+}
+.resetSec {
+  a {
+    color: #1c75bc !important;
+    font-family: karbon-regular !important;
+    font-size: 1.125rem !important;
+    text-decoration: none;
+    border-bottom: 1px solid;
+    padding-bottom: 0.1rem;
+  }
+}
+.select {
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.2rem;
+}
+.select:after {
+  content: url(../../ExternalRef/img/downArrow.svg);
+  padding: 12px 8px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  z-index: 1;
+  text-align: center;
+  width: 10%;
+  height: 100%;
+  pointer-events: none;
+}
+.select__field {
+  font-family: karbon-regularitalic !important;
+  height: 2.5rem;
+  width: 100%;
+  padding: 5px 15px;
+  color: #616263;
+  background-color: #fff;
+  border: 0px solid transparent;
+  outline: none;
+  font-size: 16px;
+  -webkit-appearance: none;
+  /* for webkit browsers */
+  -moz-appearance: none;
+  /* for firefox */
+  appearance: none;
+  /* for modern browsers */
+}
+.leftFilterPeoplePicker .ms-BasePicker.ms-PeoplePicker {
+  [class^="text"]{
+    ::after{
+      border:2px solid transparent !important;
+    }
+  }
+  font-family: karbon-regularitalic !important;
+  .ms-BasePicker-text{
+    border:0 !important;
+    min-height: 2.5rem !important;
+    &::after{
+      border:2px solid transparent !important;
+    }
+  }
+  
+  input{
+    font-family: karbon-regularitalic !important;
+    background: #fff !important;
+    border-radius: 0.2rem !important;
+    height: 2.5rem !important;
+    &::after{
+      border:2px solid transparent !important;
+    }
+  }
+  
+}
+.ms-Dropdown-title{
+  font-family: karbon-regularitalic !important;
+  border-style: none !important;
+  padding-top: 4px;
+  height: 2.5rem;
+}
+.ms-Dropdown-container {
+  max-width: 194.8px;
+  min-width: 100%;
+}
+.ms-Dropdown-caretDown{
+  font-size: 1rem;
+  font-weight: bold;
+  padding-top: 4px !important;
+  padding-right: 2px !important;
+  color: #003479 !important;
+}

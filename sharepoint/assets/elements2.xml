@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+       <!-- ConfigList -->
+    <Field Type="Text" Name="GermanValue" DisplayName="GermanValue" Required="FALSE"  Group="PoA Config Group" ID="{315c7513-3e7d-4d6f-95a2-51e6fd0721e2}" StaticName="GermanValue" />
+    <Field Type="Text" Name="EnglishValue" DisplayName="EnglishValue" Required="FALSE"  Group="PoA Config Group" ID="{38146272-c1a8-496f-ba22-4287c1bf3509}" StaticName="EnglishValue" />
+    <Field Type="Boolean" Name="IsActiveToAdd" ID="{6ede7ae8-60a7-4d7e-a494-22690fc907af}" DisplayName="IsActiveToAdd" Required="FALSE" StaticName="IsActiveToAdd" Group="PoA Config Group"/> 
+    <!--  ConfigList -->
+    <ContentType ID="0x0100083af1d80ed144689302cbed3d3acf6d" Name="Config" Group="POAConfigColumns Custom Content Types" Description="POAConfigColumns Custom Content Types">
+        <FieldRefs>
+            <FieldRef ID="{315c7513-3e7d-4d6f-95a2-51e6fd0721e2}" Name="GermanValue" DisplayName="GermanValue" Required="FALSE" />
+            <FieldRef ID="{38146272-c1a8-496f-ba22-4287c1bf3509}" Name="EnglishValue" DisplayName="EnglishValue" Required="FALSE" />
+            <FieldRef ID="{6ede7ae8-60a7-4d7e-a494-22690fc907af}" Name="IsActiveToAdd" DisplayName="IsActiveToAdd" Required="FALSE" />
+        </FieldRefs>
+    </ContentType>
+    <ListInstance CustomSchema="ConfigSchema.xml" FeatureId="00bfea71-de22-43b2-a848-c05709900100" Title="Config" Description="ConfigList" TemplateType="100" Url="Lists/Config"></ListInstance>
+    <!-- ConfigList -->
+    <!-- Lookup -->
+    <Field Name="Reason" ID="{1c2d4508-9e78-4f49-a817-14c2cc72ac70}" DisplayName="Reason" Type="Lookup" List="Lists/Config" ShowField="EnglishValue" Required="FALSE" Group="PoA Request Columns" />
+    <!-- Lookup -->
+</Elements>

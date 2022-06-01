@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <!-- Secondary list -->
+     
+    
+    <ListInstance CustomSchema="secondarySchema.xml" FeatureId="00bfea71-de22-43b2-a848-c05709900100" Title="Status" Description="Status List" TemplateType="100" Url="Lists/Status"></ListInstance>
+    <!-- Lookup field for Secondary list -->
+    <Field ID="{5898b0f4-697a-4092-9d53-6078554c0404}" Name="PAStatus" DisplayName="i.V. Status" Type="Lookup" ShowField="Title" List="Lists/Status" Required="TRUE" Group="PoA Request Columns" />
+    <Field ID="{2f641534-536b-40fb-a1b1-ef87b292c3fc}" Name="PADepartment" DisplayName="Abteilung" Type="Text" Required="TRUE" Group="PoA Request Columns" />
+    <Field ID="{0cdfe783-249e-4514-a9d5-a667a5e133f8}" Name="PAException" DisplayName="Ausnahme unter 6 Monate bei JJ" Type="Choice" Required="FALSE" Group="PoA Request Columns">
+        <CHOICES>
+            <CHOICE>erforderlich</CHOICE>
+            <CHOICE>nicht erforderlich</CHOICE>
+        </CHOICES>
+    </Field>
+
+
+    <Field ID="{4827780d-b60d-4c32-a511-47b5873cbca5}" Name="PAWithdrawalReason" DisplayName="Begründung des i.V. Entzugs" Type="Note" Required="FALSE" Group="PoA Request Columns" />
+
+    <Field ID="{743a5041-bd7f-4601-9bf0-4e71f0844a50}" Name="PAIVJustification" DisplayName="Begründung für i.V. alle 3 per Tick box" Type="Note" Required="FALSE" Group="PoA Request Columns" />
+    <Field ID="{908066f3-e0e8-42ca-8a66-d5b3eb6b0ebe}" Name="PAJustification" DisplayName="Begründung von Ausnahmen" Type="Note" Required="FALSE" Group="PoA Request Columns" />
+    <Field ID="{b9d19173-65c7-4ec7-b71b-4d84e98c3f03}" Name="PAConfirmation" DisplayName="Bestätigung, dass der Antrag für ein Paygrade 24 oder höher vorliegt" Type="Boolean" Required="FALSE" Group="PoA Request Columns" />
+
+    <Field ID="{a90340b3-8d93-47ec-9e5d-c58f5e568320}" Name="PADateAward" DisplayName="Datum der i.V. Vergabe" Type="DateTime" Required="FALSE" Group="PoA Request Columns" />
+    <Field ID="{f126cd2d-36eb-4996-8db0-6fa77554b9ce}" Name="PALastReview" DisplayName="Datum der letzten Überprüfung" Type="DateTime" Required="FALSE" Group="PoA Request Columns" />
+    <Field ID="{db9b9a03-9205-4129-8593-bba3b7b8d749}" Name="PAWithdrawalDate" DisplayName="Datum des i.V. Entzugs" Type="DateTime" Required="FALSE" Group="PoA Request Columns" />
+    <Field ID="{1035e9e3-9252-4884-9c7e-dcc9924e534d}" Name="PALastCheckResult" DisplayName="Ergebnis der letzten ÜberprüfungJ" Type="Choice" Required="FALSE" Group="PoA Request Columns">
+        <CHOICES>
+            <CHOICE>i.V. bleibt bestehen</CHOICE>
+            <CHOICE>i.V. wird entzogen</CHOICE>
+        </CHOICES>
+    </Field>
+    <Field ID="{16db6968-ed52-4c3b-80da-9905fbb66e92}" Name="PAStartDate" DisplayName="Firmeneintritt" Type="DateTime" Required="TRUE" Group="PoA Request Columns" />
+    <Field ID="{ccb88f7f-0339-4904-bc1b-be0c6566fb61}" Name="PAPdf" DisplayName="Freigabe Pdf" Type="Note" Required="FALSE" Group="PoA Request Columns" />
+    <Field ID="{153ba075-967d-4740-8701-f8f3a46ab09d}" Name="PAExectuive" DisplayName="Führungskraft" Type="Boolean" Required="TRUE" Group="PoA Request Columns" />
+
+    <Field ID="{c2f75b91-2a91-47ef-87da-ec4e7177e456}" Name="PAIntExt" DisplayName="JJ intern / extern" Type="Choice" Required="FALSE" Group="PoA Request Columns">
+        <CHOICES>
+            <CHOICE>Intern</CHOICE>
+            <CHOICE>Extern</CHOICE>
+        </CHOICES>
+    </Field>
+    <Field ID="{7d3230e9-2cb6-4213-8107-2c69110cdc2d}" Name="PAJobHistory" DisplayName="Jobhistorie" Type="Note" Required="FALSE" Group="PoA Request Columns" />
+    <Field ID="{1bcd3ac4-46fb-4661-94ba-6e14965c10ca}" Name="PAJobTitle" DisplayName="Jobtitel" Type="Text" Required="TRUE" Group="PoA Request Columns" />
+    <Field ID="{942894ae-34f6-4b8a-8b6a-497aa5507b4b}" Name="PAName" DisplayName="Name" Type="User" Required="TRUE" Group="PoA Request Columns" />
+    <!-- <Field Name="Reason" ID="{1c2d4508-9e78-4f49-a817-14c2cc72ac70}" DisplayName="Reason" Type="Lookup" List="Lists/ConfigList" ShowField="EnglishValue" Required="FALSE" Group="PoA Request Columns" /> -->
+
+    <!-- <Field ID="{faa211ad-cbad-48b4-8203-bdeb2b59251f}" Name="PARepresentative" DisplayName="Repräsentant" Type="Boolean" Required="FALSE" Group="PoA Request Columns" /> -->
+
+    <!-- <Field ID="{30385e8d-c267-44c8-b2ff-ba69fe6c9b0e}" Name="PANegotiated" DisplayName="Verhandelt für Janssen" Type="Boolean" Required="FALSE" Group="PoA Request Columns" /> -->
+
+    <!-- <Field ID="{060E50AC-E9C1-4D3C-B1F9-DE0BCAC30240F9}" Name="Title" DisplayName="WWID" Type="Text" Required="TRUE" Group="PoA Request Columns" /> -->
+
+    <!-- <Field ID="{fe02f34c-5f76-4420-9e96-073bb6cdbeed}" Name="PAContracts" DisplayName="Zeichnet Verträge für Janssen" Type="Boolean" Required="FALSE" Group="PoA Request Columns" /> -->
+
+    <!-- Content type for Primary lists -->
+    <ContentType ID="0x0100083af1d80ed144689302cbed3d3acf6a" Name="Request" Group="POARequestColumns Custom Content Types" Description="POARequestColumns Content Types">
+
+
+        <FieldRefs>
+
+            <FieldRef ID="{5898b0f4-697a-4092-9d53-6078554c0404}" Name="PAStatus" DisplayName="i.V. Status" Required="TRUE" />
+            <FieldRef ID="{2f641534-536b-40fb-a1b1-ef87b292c3fc}" Name="PADepartment" DisplayName="Abteilung" Required="TRUE" />
+            <FieldRef ID="{0cdfe783-249e-4514-a9d5-a667a5e133f8}" Name="PAException" DisplayName="Ausnahme unter 6 Monate bei JJ" Required="TRUE" />
+            <FieldRef ID="{4827780d-b60d-4c32-a511-47b5873cbca5}" Name="PAWithdrawalReason" DisplayName="Begründung des i.V. Entzugs" Required="FALSE" />
+            <FieldRef ID="{743a5041-bd7f-4601-9bf0-4e71f0844a50}" Name="PAIVJustification" DisplayName="Begründung für i.V. alle 3 per Tick box" Required="FALSE" />
+            <FieldRef ID="{908066f3-e0e8-42ca-8a66-d5b3eb6b0ebe}" Name="PAJustification" DisplayName="Begründung von Ausnahmen" Required="FALSE" />
+            <FieldRef ID="{b9d19173-65c7-4ec7-b71b-4d84e98c3f03}" Name="PAConfirmation" DisplayName="Bestätigung, dass der Antrag für ein Paygrade 24 oder höher vorliegt" Required="FALSE" />
+
+            <FieldRef ID="{a90340b3-8d93-47ec-9e5d-c58f5e568320}" Name="PADateAward" DisplayName="Datum der i.V. Vergabe" Required="FALSE" />
+            <FieldRef ID="{f126cd2d-36eb-4996-8db0-6fa77554b9ce}" Name="PALastReview" DisplayName="Datum der letzten Überprüfung" Required="FALSE" />
+            <FieldRef ID="{db9b9a03-9205-4129-8593-bba3b7b8d749}" Name="PAWithdrawalDate" DisplayName="Datum des i.V. Entzugs" Required="FALSE" />
+            <FieldRef ID="{1035e9e3-9252-4884-9c7e-dcc9924e534d}" Name="PALastCheckResult" DisplayName="Ergebnis der letzten ÜberprüfungJ" Required="FALSE" />
+            <FieldRef ID="{16db6968-ed52-4c3b-80da-9905fbb66e92}" Name="PAStartDate" DisplayName="Firmeneintritt" Required="TRUE" />
+            <FieldRef ID="{ccb88f7f-0339-4904-bc1b-be0c6566fb61}" Name="PAPdf" DisplayName="Freigabe Pdf" Required="FALSE" />
+            <FieldRef ID="{153ba075-967d-4740-8701-f8f3a46ab09d}" Name="PAExectuive" DisplayName="Führungskraft" Required="TRUE" />
+            <FieldRef ID="{c2f75b91-2a91-47ef-87da-ec4e7177e456}" Name="PAIntExt" DisplayName="JJ intern / extern" Required="FALSE" />
+            <FieldRef ID="{7d3230e9-2cb6-4213-8107-2c69110cdc2d}" Name="PAJobHistory" DisplayName="Jobhistorie" Required="FALSE" />
+            <FieldRef ID="{1bcd3ac4-46fb-4661-94ba-6e14965c10ca}" Name="PAJobTitle" DisplayName="Jobtitel" Required="TRUE" />
+            <FieldRef ID="{942894ae-34f6-4b8a-8b6a-497aa5507b4b}" Name="PAName" DisplayName="Name" Required="TRUE" />
+            <!-- <FieldRef ID="{1c2d4508-9e78-4f49-a817-14c2cc72ac70}" Name="Reason" DisplayName="Reason" Required="FALSE" /> -->
+            <!-- <FieldRef ID="{faa211ad-cbad-48b4-8203-bdeb2b59251f}" Name="PARepresentative" DisplayName="Repräsentant" Required="FALSE" /> -->
+            <!-- <FieldRef ID="{30385e8d-c267-44c8-b2ff-ba69fe6c9b0e}" Name="PANegotiated" DisplayName="Verhandelt für Janssen" Required="FALSE" /> -->
+            <!-- <FieldRef ID="{fe02f34c-5f76-4420-9e96-073bb6cdbeed}" Name="PAContracts" DisplayName="Zeichnet Verträge für Janssen" Required="FALSE" /> -->
+
+        </FieldRefs>
+    </ContentType>
+    <!-- Primary list -->
+    <ListInstance CustomSchema="primarySchema.xml" FeatureId="00bfea71-de22-43b2-a848-c05709900100" Title="Requests" Description="Requests List" TemplateType="100" Url="Lists/Requests"></ListInstance>
+</Elements>

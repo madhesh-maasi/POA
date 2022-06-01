@@ -1,0 +1,52 @@
+<List xmlns:ows="Microsoft SharePoint" Title="Basic List" EnableContentTypes="TRUE" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/Basic List" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+    <MetaData>
+        <ContentTypes>
+            <ContentType ID="0x0100083af1d80ed144689302cbed3d3acf6a" Name="Request" Group="POARequestColumns Custom Content Types" />
+        </ContentTypes>
+        <Fields></Fields>
+        <Views>
+            <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
+                <XslLink Default="TRUE">main.xsl</XslLink>
+                <JSLink>clienttemplates.js</JSLink>
+                <RowLimit Paged="TRUE">30</RowLimit>
+                <Toolbar Type="Standard" />
+                <ViewFields>
+                    <FieldRef Name="ID"></FieldRef>
+                    <FieldRef Name="LinkTitle"></FieldRef>
+                    <FieldRef Name="PAName"></FieldRef>
+                    <FieldRef Name="PADepartment"></FieldRef>
+                    <FieldRef Name="PAJobTitle"></FieldRef>
+                    <FieldRef Name="PAExectuive"></FieldRef>
+                    <FieldRef Name="PAIntExt"></FieldRef>
+                    <FieldRef Name="PAStartDate"></FieldRef>
+                    <FieldRef Name="PAException"></FieldRef>
+                    <FieldRef Name="PAConfirmation"></FieldRef>
+                    <!-- <FieldRef Name="PAContracts"></FieldRef> -->
+                    <!-- <FieldRef Name="PANegotiated"></FieldRef> -->
+                    <!-- <FieldRef Name="PARepresentative"></FieldRef> -->
+                    <FieldRef Name="PAStatus"></FieldRef>
+                    <FieldRef Name="PADateAward"></FieldRef>
+                    <FieldRef Name="PAPdf"></FieldRef>
+                    <FieldRef Name="PAJobHistory"></FieldRef>
+                    <FieldRef Name="PAJustification"></FieldRef>
+                    <FieldRef Name="PAIVJustification"></FieldRef>
+                    <FieldRef Name="PALastReview"></FieldRef>
+                    <FieldRef Name="PALastCheckResult"></FieldRef>
+                    <FieldRef Name="PAWithdrawalDate"></FieldRef>
+                    <FieldRef Name="PAWithdrawalReason"></FieldRef>
+                    <FieldRef Name="Reason"></FieldRef>
+                </ViewFields>
+                <Query>
+                    <OrderBy>
+                        <FieldRef Name="ID" />
+                    </OrderBy>
+                </Query>
+            </View>
+        </Views>
+        <Forms>
+            <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+            <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+            <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+        </Forms>
+    </MetaData>
+</List>

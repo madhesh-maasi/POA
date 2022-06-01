@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+      "name": "jnj-apps-as-poa-client-side-solution",
+      "id": "1e5dc609-ef3b-4ece-a9f5-f50dd5161398",
+      "version": "3.0.1.1",
+      "includeClientSideAssets": true,
+      "skipFeatureDeployment": true,
+      "isDomainIsolated": false,
+      "features": [{
+          "title": "jnj-apps-as-poa",
+          "description": "asset-deployment-webpart-client-side-solution",
+          "id": "69dac75c-d379-4d96-8b24-c6b70c95d766", // <-- Update new GUID
+          "version": "3.0.1.1",
+          "assets": {
+              "elementManifests": [
+                  "elements.xml",
+                  "elements2.xml"
+                  // "ClientSideInstance.xml"
+              ],
+              "elementFiles": [
+                  "primarySchema.xml",
+                  "secondarySchema.xml",
+                  "ConfigSchema.xml"
+              ],"upgradeActions": [
+                "upgrade-Actions.xml"
+              ]
+              
+          }
+      }],
+      "developer": {
+          "name": "",
+          "websiteUrl": "",
+          "privacyUrl": "",
+          "termsOfUseUrl": "",
+          "mpnId": "Undefined-1.14.0"
+      },
+      "metadata": {
+          "shortDescription": {
+              "default": "JNJ-Apps-AS-PoA description"
+          },
+          "longDescription": {
+              "default": "JNJ-Apps-AS-PoA description"
+          },
+          "screenshotPaths": [],
+          "videoUrl": "",
+          "categories": []
+      }
+
+  },
+  "paths": {
+      "zippedPackage": "solution/jnj-apps-as-poa.sppkg"
+  }
+}

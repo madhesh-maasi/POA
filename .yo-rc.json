@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "jnj-apps-as-po-a",
+    "libraryId": "1e5dc609-ef3b-4ece-a9f5-f50dd5161398",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "JNJ-Apps-AS-PoA",
+    "solutionShortDescription": "JNJ-Apps-AS-PoA description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
