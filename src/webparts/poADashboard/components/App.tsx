@@ -32,8 +32,7 @@ const App = (props) => {
         filterItems={filterItems}
         choiceUpdate={choicesUpdateHandler}
         tableDesText={props.tableDesText}
-        groupID = {props.groupID}
-        graph = {props.graph}
+        groupID={props.groupID}
       />
     </div>
   );

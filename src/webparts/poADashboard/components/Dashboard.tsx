@@ -274,7 +274,7 @@ const Dashboard = (props) => {
         filterObj.führungskraft == "" &&
         filterObj.jjInternExtern == "" &&
         filterObj.ivStatus == "" &&
-        filterObj.datumderi == "")
+        filterObj.datumderi == null)
     ) {
       let allRequests: any[] = await props.spcontext.web.lists
         .getByTitle("Requests")
@@ -316,9 +316,7 @@ const Dashboard = (props) => {
             request.PAExectuive ? "Ja" : "Nein",
             request.PAIntExt,
             request.PAStatus ? request.PAStatus.Title : "",
-            request.PADateAward
-              ? new Date(request.PADateAward).toLocaleDateString("de-DE")
-              : "-",
+            request.PADateAward ? request.PADateAward : "-",
             request.Id
           )
         );
@@ -431,10 +429,10 @@ const Dashboard = (props) => {
       );
 
       filteredArr = filteredArr.filter((req) =>
-        filterObj.datumderi != "" && req.PADateAward
+        filterObj.datumderi != null && req.PADateAward
           ? new Date(req.PADateAward).toLocaleDateString() ==
-            filterObj.datumderi
-          : filterObj.datumderi != ""
+            new Date(filterObj.datumderi).toLocaleDateString()
+          : filterObj.datumderi != null
           ? false
           : true
       );
@@ -449,9 +447,7 @@ const Dashboard = (props) => {
             request.PAExectuive ? "Ja" : "Nein",
             request.PAIntExt,
             request.PAStatus.Title,
-            request.PADateAward
-              ? new Date(request.PADateAward).toLocaleDateString("de-DE")
-              : "-",
+            request.PADateAward ? request.PADateAward : "-",
             request.Id
           )
         );
@@ -778,7 +774,11 @@ const Dashboard = (props) => {
                       <TableCell align="center">{row.jjInterExtern}</TableCell>
                       <TableCell align="center">{row.ivStatus}</TableCell>
                       <TableCell align="center">
-                        <div style={{ height: "26px" }}>{row.datum}</div>
+                        <div style={{ height: "26px" }}>
+                          {row.datum != "-"
+                            ? new Date(row.datum).toLocaleDateString("de-DE")
+                            : row.datum}
+                        </div>
                         <div
                           className="boxOutIcons"
                           style={{
@@ -911,25 +911,32 @@ const Dashboard = (props) => {
                 principalTypes={[PrincipalType.User]}
                 resolveDelay={1000}
                 onChange={async (e) => {
-                  objRequestInfo.nameId = parseInt(e[0].id);
-                  let userDetails;
-                  let gotJobtitle;
-                  await props.spcontext.web.siteUsers
-                    .getById(e[0].id)
-                    .get()
-                    .then((getfromsp) => (userDetails = getfromsp));
-                  let a = await props.spcontext.profiles
-                    .getUserProfilePropertyFor(
-                      userDetails.LoginName,
-                      "SPS-JobTitle"
-                    )
-                    .then((gotItem) => {
-                      gotJobtitle = gotItem;
-                    });
-                  objRequestInfo.jobtitel = gotJobtitle;
-                  setRequestInfo({ ...objRequestInfo });
-                  objRequestInfo.nameEmail = e[0].secondaryText;
-                  setRequestInfo(objRequestInfo);
+                  try {
+                    objRequestInfo.nameId = parseInt(e[0].id);
+                    let userDetails;
+                    let gotJobtitle;
+                    await props.spcontext.web.siteUsers
+                      .getById(e[0].id)
+                      .get()
+                      .then((getfromsp) => (userDetails = getfromsp));
+                    let a = await props.spcontext.profiles
+                      .getUserProfilePropertyFor(
+                        userDetails.LoginName,
+                        "SPS-JobTitle"
+                      )
+                      .then((gotItem) => {
+                        gotJobtitle = gotItem;
+                      });
+                    objRequestInfo.jobtitel = gotJobtitle;
+                    setRequestInfo({ ...objRequestInfo });
+                    objRequestInfo.nameEmail = e[0].secondaryText;
+                    setRequestInfo({ ...objRequestInfo });
+                  } catch (error) {
+                    objRequestInfo.jobtitel = "";
+                    setRequestInfo({ ...objRequestInfo });
+                    objRequestInfo.nameEmail = "";
+                    setRequestInfo({ ...objRequestInfo });
+                  }
                 }}
                 placeholder="Type here"
                 defaultSelectedUsers={[requestInfo.nameEmail]}
@@ -982,10 +989,11 @@ const Dashboard = (props) => {
               <input
                 type="text"
                 placeholder="Type here"
-                defaultValue={requestInfo.jobtitel}
+                // defaultValue={requestInfo.jobtitel}
+                value={requestInfo.jobtitel}
                 onChange={(e) => {
                   objRequestInfo.jobtitel = e.target["value"];
-                  setRequestInfo(objRequestInfo);
+                  setRequestInfo({ ...objRequestInfo });
                 }}
                 disabled={isEdit && !isAdminUser}
               />

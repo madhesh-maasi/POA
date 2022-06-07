@@ -13,9 +13,8 @@ import {
   IDropdownStyles,
 } from "@fluentui/react/lib/Dropdown";
 
-import * as strings from 'PoADashboardWebPartStrings';
-import { DatePicker } from '@fluentui/react';
-
+import * as strings from "PoADashboardWebPartStrings";
+import { DatePicker } from "@fluentui/react";
 
 const dropdownStyles: Partial<IDropdownStyles> = { dropdown: {} };
 
@@ -27,7 +26,7 @@ let objFilterItems = {
   führungskraft: [],
   jjInternExtern: [],
   ivStatus: [],
-  datumderi: "",
+  datumderi: null,
 };
 let arrPAIntExtChoice = [];
 let selectedUser = [];
@@ -64,9 +63,9 @@ const LeftFilter = (props) => {
   const [jjInternExternselectedKeys, setJjInternExternSelectedKeys] = useState<
     string[]
   >([]);
-  const [ivStatusSelectedKeys, setIvStatusSelectedKeys] = useState<
-    string[]
-  >([]);
+  const [ivStatusSelectedKeys, setIvStatusSelectedKeys] = useState<string[]>(
+    []
+  );
   useEffect(() => {
     getChoiceHandler();
   }, [props.choiceUpdate]);
@@ -243,9 +242,12 @@ const LeftFilter = (props) => {
   };
 
   const onFormatDate = (date?: Date): string => {
-    return !date ? "" : `${date.getDate() < 10 ? "0" : ""}${date.getDate()}.${(date.getMonth() + 1) < 10 ? "0" : ""}${(date.getMonth() + 1)}.${date.getFullYear()}`;
+    return !date
+      ? ""
+      : `${date.getDate() < 10 ? "0" : ""}${date.getDate()}.${
+          date.getMonth() + 1 < 10 ? "0" : ""
+        }${date.getMonth() + 1}.${date.getFullYear()}`;
   };
-
   return (
     <div className="leftFilterSection">
       <div className="HeadingSection">
@@ -312,7 +314,7 @@ const LeftFilter = (props) => {
           <div className="labelSection">
             <label>{strings.DepartmentLabel}</label>
           </div>
-          <div style={{ width: '100%' }}>
+          <div style={{ width: "100%" }}>
             {/* <div className="select"> */}
             {/* <select
                 value={
@@ -511,9 +513,13 @@ const LeftFilter = (props) => {
           </div>
           <DatePicker
             placeholder="DD.MM.YYYY"
-            value={filterItems.datumderi ? (new Date(filterItems.datumderi)) : null}
+            value={
+              filterItems.datumderi ? new Date(filterItems.datumderi) : null
+            }
             onSelectDate={(selectedDate) => {
-              selectedDate ? (objFilterItems.datumderi = selectedDate.toLocaleDateString()) :(objFilterItems.datumderi = "") ;
+              selectedDate
+                ? (objFilterItems.datumderi = selectedDate)
+                : (objFilterItems.datumderi = "");
               setRerenderFilters(true);
             }}
             formatDate={onFormatDate}
@@ -550,7 +556,7 @@ const LeftFilter = (props) => {
                 führungskraft: [],
                 jjInternExtern: [],
                 ivStatus: [],
-                datumderi: "",
+                datumderi: null,
               };
               // document.querySelector('#datePicker')['valueAsDate'] = null;
               setPPSelectedUser([]);
